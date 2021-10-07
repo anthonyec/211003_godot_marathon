@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/male_1_hello.wav-dc87b8085d3928bc1edd469df009be19.sample"
+
+[deps]
+
+source_file="res://entities/npc/sfx/shouts/male_1_hello.wav"
+dest_files=[ "res://.import/male_1_hello.wav-dc87b8085d3928bc1edd469df009be19.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

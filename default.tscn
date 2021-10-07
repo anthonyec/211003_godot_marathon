@@ -1,0 +1,204 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ground.tres" type="Material" id=1]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player_follow_cam.gd" type="Script" id=5]
+[ext_resource path="res://npcs.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "temp_look_at_move"
+length = 10.0
+loop = true
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
+dof_blur_far_enabled = true
+dof_blur_far_distance = 25.0
+dof_blur_far_amount = 0.05
+dof_blur_far_quality = 2
+glow_enabled = true
+glow_intensity = 0.5
+glow_bloom = 1.0
+
+[node name="DefaultScene" type="Spatial"]
+
+[node name="PlayerFollowCam" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.574977, 0.81817, 0, -0.81817, 0.574977, -2.21708, 8.14596, 11.1929 )
+current = true
+fov = 40.0
+size = 6.35665
+script = ExtResource( 5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.468043, 0.664186, -0.582917, 0.121853, 0.604822, 0.786983, 0.875264, -0.439372, 0.20215, 0, 1.76259, 0 )
+visible = false
+light_color = Color( 1, 0.835294, 0.580392, 1 )
+shadow_enabled = true
+shadow_bias = 0.0
+
+[node name="Ground" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00767279, 2.38419e-07, -20.3338 )
+material_override = ExtResource( 1 )
+use_collision = true
+width = 50.0
+height = 0.05
+depth = 67.8396
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 0.57146, 0, 0, 0, 0.57146, 0, 0, 0, 0.57146, -12.6774, 0, 0 )
+width = 1.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8312, 0.921477, -4.12286 )
+width = 1.0
+height = 1.75
+depth = 1.0
+
+[node name="NPCs" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="NPC" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.83818, 0.897921, 1.62421 )
+
+[node name="NPC2" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.19045, 0.897921, -0.524961 )
+
+[node name="NPC3" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.44658, 0.897921, -4.25734 )
+
+[node name="NPC13" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.32801, 0.897921, -4.531 )
+
+[node name="NPC4" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.4141, 0.897921, -1.97061 )
+
+[node name="NPC5" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.8652, 0.897921, 1.11205 )
+
+[node name="NPC6" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.45221, 0.897921, 0.311776 )
+
+[node name="NPC7" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.2064, 0.897921, -0.126084 )
+
+[node name="NPC8" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.14314, 0.897921, 1.18668 )
+
+[node name="NPC9" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.27041, 0.897921, -2.03061 )
+
+[node name="NPC10" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.50945, 0.897921, -2.46847 )
+
+[node name="NPC11" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.97201, 0.897921, -1.02075 )
+
+[node name="NPC12" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.7771, 0.897921, -0.836251 )
+
+[node name="NPC14" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.9635, 0.897921, -6.47663 )
+
+[node name="NPC15" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.06514, 0.897921, -8.6258 )
+
+[node name="NPC16" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.32127, 0.897921, -12.3582 )
+
+[node name="NPC17" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.45333, 0.897921, -12.6318 )
+
+[node name="NPC18" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.28879, 0.897921, -10.0715 )
+
+[node name="NPC19" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.990515, 0.897921, -6.98879 )
+
+[node name="NPC20" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.3269, 0.897921, -7.78907 )
+
+[node name="NPC21" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.33171, 0.897921, -8.22693 )
+
+[node name="NPC22" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.01783, 0.897921, -6.91416 )
+
+[node name="NPC23" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.14509, 0.897921, -10.1315 )
+
+[node name="NPC24" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.63476, 0.897921, -10.5693 )
+
+[node name="NPC25" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.8467, 0.897921, -9.12159 )
+
+[node name="NPC26" parent="NPCs" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.61225, 0.897921, -43.9385 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/temp_look_at_move = SubResource( 1 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.741748, -0.539272, -0.398743, 0.555177, 0.16014, 0.81617, -0.376283, -0.826765, 0.418175, -7.96955, 8.97082, 2.43073 )
+light_color = Color( 1, 0.94902, 0.8, 1 )
+light_energy = 4.0
+shadow_enabled = true
+spot_range = 29.909
+spot_angle = 38.8284
+
+[node name="SpotLight2" type="SpotLight" parent="."]
+transform = Transform( 0.608307, 0.723226, -0.326966, 0.493522, -0.0220268, 0.869454, 0.62161, -0.69026, -0.370327, -0.770147, 8.97082, -48.1635 )
+light_color = Color( 1, 0.917647, 0.721569, 1 )
+light_energy = 5.0
+shadow_enabled = true
+spot_range = 17.6488
+spot_angle = 15.9742
+
+[node name="SpotLight3" type="SpotLight" parent="."]
+transform = Transform( 0.680145, 0.641536, 0.354731, 0, 0.483893, -0.875127, -0.733077, 0.595214, 0.329117, 4.01025, -2.2832, -42.1791 )
+light_color = Color( 0.647059, 1, 0.709804, 1 )
+light_energy = 0.2
+spot_range = 5.11145
+spot_angle = 37.2858
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57452, -0.304977, -42.6444 )
+light_color = Color( 0.647059, 1, 0.709804, 1 )
+light_energy = 0.1
+omni_range = 5.18952
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68554, 0.493757, -43.9167 )
+light_energy = 0.1
+omni_range = 1.55114
+
+[node name="SpotLight5" type="SpotLight" parent="."]
+transform = Transform( 0.824129, -0.448742, -0.345603, -0.386727, -1.32158e-07, -0.922194, 0.413827, 0.893661, -0.173541, 0.305653, -2.31361, -45.4179 )
+visible = false
+light_color = Color( 0.647059, 1, 0.709804, 1 )
+light_energy = 0.1
+spot_range = 7.96454
+spot_angle = 37.2858
+
+[node name="SpotLight4" type="SpotLight" parent="."]
+transform = Transform( -0.846824, 0.521688, 0.103589, 0.00321838, 0.199785, -0.979835, -0.531863, -0.829414, -0.170861, 1.1507, -7.49563, -4.71106 )
+light_color = Color( 0.647059, 1, 0.709804, 1 )
+light_energy = 0.2
+spot_range = 23.1486
+spot_angle = 48.8037
+
+[node name="SpotLight6" type="SpotLight" parent="."]
+transform = Transform( -0.594261, 0.660626, -0.458722, 8.61216e-08, -0.570357, -0.821397, -0.804272, -0.488124, 0.338941, -6.86826, -1.94443, 5.04621 )
+light_color = Color( 0.647059, 1, 0.709804, 1 )
+light_energy = 0.3
+spot_range = 24.7742
+spot_angle = 60.1312
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25864, 1.06263, 6.31992 )
