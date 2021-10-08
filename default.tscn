@@ -13,6 +13,8 @@ loop = true
 
 [sub_resource type="Environment" id=2]
 background_mode = 1
+tonemap_mode = 3
+tonemap_exposure = 0.7
 dof_blur_far_enabled = true
 dof_blur_far_distance = 25.0
 dof_blur_far_amount = 0.05
